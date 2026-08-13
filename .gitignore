@@ -1,0 +1,82 @@
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Re]leases/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bsearch/
+graphedit/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio cache/options directory
+.vs/
+*-[Cc]ache.json
+
+## Visual Studio Profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+## Visual Studio Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/code-workspace
+
+## Rider/JetBrains
+.idea/
+*.sln.iml
+
+## CoreCLR debugger generating logs
+FilesToContainDebugInfo.txt
+
+## ASP.NET Core secrets and local development variables
+.env
+*.json.user
+usersecrets.json
+_backup_db/*
+
+## Test results
+BenchmarkDotNet.Artifacts/
+TestResults/
+*.trx
+*.vshistory/
+
+## NuGet Packages
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+## Microsoft Azure Build Output
+csx/
+*.build.csdef
+
+## Local History for Visual Studio
+.localhistory/
+
+## Windows default metadata hidden files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+
+CLAUDE.md
