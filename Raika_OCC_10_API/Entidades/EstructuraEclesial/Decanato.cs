@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Raika_OCC_10_API.Entidades
+namespace Raika_OCC_10_API.Entidades.EstructuraEclesial
 {
     public class Decanato
     {

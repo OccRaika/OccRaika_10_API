@@ -1,4 +1,4 @@
-﻿namespace Raika_OCC_10_API.Entidades
+﻿namespace Raika_OCC_10_API.Entidades.Domicilios
 {
     public class EntidadFederativa
     {
