@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Raika_OCC_10_API.Entidades;
 using Raika_OCC_10_API.Entidades.Perfil;
 using Raika_OCC_10_API_10_API.Entidades;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,8 +24,25 @@ builder.Services.AddIdentity<Perfil, IdentityRole<Guid>>(ptions =>
     //Configurar opciones de Identity
 }).AddEntityFrameworkStores<OCCRaikaDbContext>()
   .AddDefaultTokenProviders()
-  .AddClaimsPrincipalFactory<UserClaimsPrincipalFactory<Perfil, IdentityRole<Guid>>>()
-  .AddSignInManager<SignInManager<Perfil>>();
+  .AddClaimsPrincipalFactory<UserClaimsPrincipalFactory<Perfil, IdentityRole<Guid>>>();
+
+builder.Services.AddScoped<UserManager<IdentityUser>>();
+builder.Services.AddScoped<SignInManager<IdentityUser>>();
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddAuthentication().AddJwtBearer(opciones =>
+{
+    opciones.MapInboundClaims = false;
+    opciones.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWTKey"]!)),
+        ClockSkew = TimeSpan.Zero
+    };
+});
 
 var app = builder.Build();
 

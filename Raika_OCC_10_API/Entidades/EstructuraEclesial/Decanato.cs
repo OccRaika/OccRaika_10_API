@@ -7,11 +7,9 @@ namespace Raika_OCC_10_API.Entidades.EstructuraEclesial
     {
         public int DecanatoId { get; set; }
         [Required]
-        public string ClaveDecanato { get; set; } = string.Empty;
+        public string Clave { get; set; } = string.Empty;
         [Required]
         public string Nombre { get; set; } = string.Empty;
-        [Required]
-        public string ClaveZonaPastoral { get; set; } = string.Empty;
         public ZonaPastoral? ZonaPastoral { get; set; }
         public ICollection<Capilla>? Capillas { get; set; }
         public ICollection<EspacioCatolico>? EspacioCatolicos { get; set; }
